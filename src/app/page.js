@@ -6,7 +6,11 @@ import db from "../../prisma/db"; // Importando o db corretamente
 
 async function getAllPosts(page) {
   try {
-    const posts = await db.post.findMany();
+    const posts = await db.post.findMany({
+      include: {
+        author: true
+      }
+    });
     return { data: posts, prev: null, next: null };
   } catch (error) {
     logger.error('Falha ao obter posts', { error });
