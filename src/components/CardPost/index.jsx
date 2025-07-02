@@ -2,8 +2,14 @@ import Image from "next/image"
 import { Avatar } from "../Avatar"
 import styles from "./cardpost.module.css"
 import Link from "next/link"
+import { IconButton } from "../iconButton"
+import { ThumbsUp } from "../icons/ThumbsUp"
+import { incrementThumbsUp } from "@/actions"
 
 export const CardPost = ({ post, highlight }) => {
+
+    const submitThumbsUp = incrementThumbsUp.bind(null, post);
+
     return (
             <article className={styles.card} style={{ width: highlight ? 993 : 486 }}>
                 <header className={styles.header}>
@@ -23,6 +29,16 @@ export const CardPost = ({ post, highlight }) => {
                 </section>
 
                 <footer className={styles.footer}>
+                    <div>
+                        <form action={submitThumbsUp}>
+                            <IconButton>
+                                <ThumbsUp/>
+                            </IconButton>
+                        </form>
+                        <p>
+                            {post.likes}
+                        </p>
+                    </div>
                     <Avatar
                         imageSrc={post.author.avatar}
                         name={post.author.username}
