@@ -281,3 +281,5 @@
 {"error":{"clientVersion":"6.9.0","name":"PrismaClientInitializationError"},"level":"error","message":"Falha ao obter posts"}
 {"error":{"clientVersion":"6.9.0","name":"PrismaClientInitializationError"},"level":"error","message":"Falha ao obter posts"}
 {"error":{},"level":"error","message":"Falha ao obter posts"}
+{"error":{},"level":"error","message":"Falha ao obter o post com o slug: ","slug":"webpack-um-guia-para-iniciantes"}
+{"error":{},"level":"error","message":"Falha ao obter o post com o slug: ","slug":"webpack-um-guia-para-iniciantes"}
